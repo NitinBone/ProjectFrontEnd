@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+       
+        
+         .navbar-custom {
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgb(102, 18, 130) 0%, rgb(154, 37, 165) 39%, rgb(102,18,130) 100%);          
+              height: 55px;
+              width: 1536px;
+    }
+    .navbar-custom .navbar-brand,
+    .navbar-custom .nav-link {
+      color: white;
+      margin-top: 2px;
+    }
+    .navbar-custom .nav-link:hover {
+      color: #ddd;
+    }
+    .nav-img{
+        height: 30px;
+    }
+    .cont{
+        margin-top: 100px;
+    }
+
+    .Search-bar,.Category{
+      border: 1px solid rgb(139, 16, 139);
+    }
+    .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    width: 100%;
+    padding-left: 30px; 
+    
+}
+
+.Search-bar:focus {
+            border-color: #b55add; /* Change this to your desired color */
+            box-shadow: 0 0 5px #b55add; /* Optional: Add a shadow effect */
+            outline: none; /* Remove default outline */
+        }
+
+.search-icon {
+    position: absolute;
+    left: 10px; 
+    color: #aaa; 
+    margin-left: 13px;
+    margin-top: 2px;
+}
+.search-name{
+  padding-left: 29px;
+}
+.search{
+    margin-top: 13px;
+
+}
+    </style>
+</head>
+<body style="position: fixed;">
+    
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img class="nav-img me-1 mb-1" style="background-color: white;" src="restaurant-cutlery-circular-symbol-of-a-spoon-and-a-fork-in-a-circle.png" alt=""><strong>TasteHaven</strong></a>
+          <a class="navbar-brand mt-1" href="#"><img class="nav-img me-1 mb-1" style="background-color: white;" alt=""><strong><i class="fa-solid fa-tag"></i> POS</strong></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav ">
+            <ul class="navbar-nav">
+              
+             
+              <li class="nav-item">
+                <a class="nav-link" href="#"><Strong><i class="fa-solid fa-table-cells-large"></i> Category</Strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><Strong><i class="fa-brands fa-product-hunt"></i> Product</Strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#"><i class="fa-solid fa-chart-simple "></i> <Strong> Setting</Strong></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#"><i class="fa-solid fa-chart-simple "></i> <Strong> Report</Strong></a>
+              </li>
+            </ul>
+          </div>
+          <a class="nav-link" href="#"><Strong><i class="fa-solid fa-right-from-bracket"></i> LogOut</Strong></a>
+
+        </div>
+      </nav>
+
+      <!-- <div class="container-fluid">
+          <div class="col-md-8 ">
+            <div class="row search">
+                <div class="col-md-6 search-container">
+                 <input type="text" class="form-control Search-bar search-name" style="border-radius: 10px;" placeholder="Search">
+                 <i class="fas fa-search search-icon "></i>
+
+
+                </div>
+                <div class="col-md-6">
+                 <select class="form-select Category Search-bar" style="border-radius: 10px;" aria-label="Category select">
+                     <option selected>Select Category</option>
+                     <option value="1">Category 1</option>
+                     <option value="2">Category 2</option>
+                     <option value="3">Category 3</option>
+                   </select>
+                </div>
+             </div>
+          </div>
+      </div> -->
+      <div class="container-fluid=" style="background-color: rgb(65, 177, 102); margin-top: 55px;">
+            <div class="row ">
+              <div class="col-8 ps-4">
+                <div class="row search">
+                    <div class="col-md-6 search-container">
+                     <input type="text" class="form-control Search-bar search-name" style="border-radius: 10px;" placeholder="Search">
+                     <i class="fas fa-search search-icon "></i>
+    
+    
+                    </div>
+                    <div class="col-md-6">
+                     <select class="form-select Category Search-bar" style="border-radius: 10px;" aria-label="Category select">
+                         <option selected>Select Category</option>
+                         <option value="1">Category 1</option>
+                         <option value="2">Category 2</option>
+                         <option value="3">Category 3</option>
+                       </select>
+                    </div>
+                 </div>
+                 <div class="" style="height: 568px; background-color: black; margin-bottom: 560px;"> 
+                 <div class="row" style="overflow-x: auto;">
+                    
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2 mt-3">
+                        <div class="card products " style="height: 150px; border-radius: 10px;" >
+                           <div class="row images " >
+                            <img src="dish2.jpg" alt="">
+                           </div>
+                           <div class="row" style="text-align: center;">
+                            <p class="mt-2" style="height: 30px; overflow: auto;"><strong>Cake</strong></p>
+                           </div>
+                        </div>
+                      </div>
+                      
+                      
+                 </div>
+              </div>
+
+              
+            </div>
+
+              <div class="col-4" style="background-color: #b55add; height: 620px;">col-4</div>
+              
+            </div>
+      </div>
+    
+
+<div class="container-fluid  fixed-bottom" style="background-color: rgb(121, 164, 164);">
+<h1>hii</h1>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
